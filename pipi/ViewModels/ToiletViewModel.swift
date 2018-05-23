@@ -8,12 +8,25 @@
 
 import Foundation
 import RxSwift
+import MapKit
 
 struct ToiletViewModel {
-    
+
     private let toiletsVariable = Variable([])
     var toilets:Observable<Array<Any>> {
         return toiletsVariable.asObservable()
+    }
+    
+    func fetchToiletAnnotations() -> Array<ToiletAnnotation> {
+        
+        var toiletAnnotations = Array<ToiletAnnotation>()
+        for toilet in self.toiletsVariable.value {
+            
+            let toilet = toilet as! Toilet
+            let t = ToiletAnnotation(title: toilet.opening_time, locationName: toilet.record_timestamp, coordinate: CLLocationCoordinate2DMake(toilet.latitude, toilet.longitude))
+            toiletAnnotations.append(t)
+        }
+        return toiletAnnotations
     }
     
     func fetchToilets() {

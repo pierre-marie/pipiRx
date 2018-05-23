@@ -17,7 +17,7 @@ class ToiletService: NSObject {
     func getToiletsFromApi(success: @escaping (_ response: Array<Toilet>?) -> Void,
                            failure: @escaping (_ error: NSError?) -> Void) {
         
-        let urlString: String = "https://opendata.paris.fr/api/records/1.0/search/?dataset=sanisettesparis2011&facet=arrondissement&facet=horaires_ouverture"
+        let urlString: String = "https://opendata.paris.fr/api/records/1.0/search/?dataset=sanisettesparis2011&facet=arrondissement&facet=horaires_ouverture&rows=900"
         
         Alamofire.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default).validate().responseJSON { response in
             switch response.result {
@@ -37,12 +37,12 @@ class ToiletService: NSObject {
                         
                         let t = Toilet(record_id: r.value(forKey: "recordid") as! String,
                                        record_timestamp: r.value(forKey: "record_timestamp") as! String,
-                                       latitude: coordinates[0] as! Double,
-                                       longitude: coordinates[1] as! Double,
+                                       latitude: coordinates[1] as! Double,
+                                       longitude: coordinates[0] as! Double,
                                        opening_time: fields.value(forKey: "horaires_ouverture") as! String,
                                        district: fields.value(forKey: "arrondissement") as! String,
                                        street_name: fields.value(forKey: "nom_voie") as! String,
-                                       street_number: fields.value(forKey: "numero_voie") as! String)
+                                       street_number: "")//fields.value(forKey: "numero_voie") as! String)
                         toilets.append(t)
                     }
                     

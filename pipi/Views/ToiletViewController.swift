@@ -25,6 +25,11 @@ class ToiletViewController: UIViewController {
         self.viewModel.fetchToilets()
     }
     
+    func redrawMapAnnotations(toilets: Array<Toilet>) {
+        map.removeAnnotations(map.annotations)
+        map.addAnnotations(self.viewModel.fetchToiletAnnotations())
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -33,6 +38,7 @@ class ToiletViewController: UIViewController {
             .subscribe(onNext: { [weak self] toilets in
                 // Manage UI for every toilets value changes
                 print("onNext -> toilets: \(toilets.count)")
+                self?.redrawMapAnnotations(toilets: toilets as! Array<Toilet>)
             }).disposed(by: disposeBag)
         
         self.viewModel.fetchToilets()
