@@ -38,14 +38,12 @@ class ToiletViewController: UIViewController, MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        // Don't want to show a custom image if the annotation is the user's location.
+
         guard !(annotation is MKUserLocation) else {
             return nil
         }
-        // Better to make this class property
-        let annotationIdentifier = "AnnotationIdentifier"
         
+        let annotationIdentifier = "AnnotationIdentifier"
         var annotationView: MKAnnotationView?
         if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
             annotationView = dequeuedAnnotationView
@@ -56,7 +54,6 @@ class ToiletViewController: UIViewController, MKMapViewDelegate {
         }
         
         if let annotationView = annotationView {
-            // Configure your annotation view here
             annotationView.canShowCallout = true
             annotationView.image = UIImage(named: "t411")
         }
@@ -64,12 +61,11 @@ class ToiletViewController: UIViewController, MKMapViewDelegate {
         return annotationView
     }
     
-    func centerMapOnParis() {
+    func centerMapOn(location: CLLocation) {
 
         let span = MKCoordinateSpanMake(0.0275, 0.0275)
-        let coordinate = CLLocationCoordinate2DMake(48.861710, 2.337440)
+        let coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region = MKCoordinateRegion(center: coordinate, span: span)
-        map.showsUserLocation = true
         map.setRegion(region, animated: true)
     }
     
@@ -77,13 +73,18 @@ class ToiletViewController: UIViewController, MKMapViewDelegate {
         
         super.viewDidLoad()
 
-        centerMapOnParis()
+        UserLocationManager.shared.determineCurrentLocation()
         
         self.viewModel.toilets
             .subscribe(onNext: { [weak self] toilets in
-                // Manage UI for every toilets value changes
                 print("onNext -> toilets: \(toilets.count)")
                 self?.redrawMapAnnotations(toilets: toilets as! Array<Toilet>)
+            }).disposed(by: disposeBag)
+        
+        UserLocationManager.shared.userLocation
+            .subscribe(onNext: { userLocation in
+                print("onNext -> user location: \(userLocation)")
+                self.centerMapOn(location: userLocation)
             }).disposed(by: disposeBag)
         
         toiletSwitch.setOn(false, animated: true)

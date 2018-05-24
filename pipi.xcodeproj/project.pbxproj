@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F0AC68920B6EA2300954911 /* Paris.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5F0AC68820B6EA2300954911 /* Paris.gpx */; };
+		5F0AC68C20B6EE9000954911 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AC68B20B6EE9000954911 /* UserLocationManager.swift */; };
 		5F9F375120B56F4B00FC872A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F375020B56F4B00FC872A /* AppDelegate.swift */; };
 		5F9F375620B56F4C00FC872A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9F375420B56F4B00FC872A /* Main.storyboard */; };
 		5F9F375920B56F4C00FC872A /* pipi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F375720B56F4C00FC872A /* pipi.xcdatamodeld */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		1D0B0D6284C47AC36FD01CA1 /* Pods-pipi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pipi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pipi/Pods-pipi.debug.xcconfig"; sourceTree = "<group>"; };
 		544015C71D2FF54AD315FA42 /* Pods-pipiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pipiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pipiTests/Pods-pipiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F0AC68820B6EA2300954911 /* Paris.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Paris.gpx; sourceTree = "<group>"; };
+		5F0AC68B20B6EE9000954911 /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		5F9F374D20B56F4B00FC872A /* pipi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pipi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9F375020B56F4B00FC872A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F9F375520B56F4B00FC872A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F0AC68A20B6EE3700954911 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5F0AC68B20B6EE9000954911 /* UserLocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		5F9F374420B56F4B00FC872A = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,8 @@
 		5F9F374F20B56F4B00FC872A /* pipi */ = {
 			isa = PBXGroup;
 			children = (
+				5F0AC68820B6EA2300954911 /* Paris.gpx */,
+				5F0AC68A20B6EE3700954911 /* Managers */,
 				5F9F377320B56F5D00FC872A /* Models */,
 				5F9F377F20B5893500FC872A /* Services */,
 				5F9F377520B56F7100FC872A /* Views */,
@@ -264,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F9F375E20B56F4D00FC872A /* LaunchScreen.storyboard in Resources */,
+				5F0AC68920B6EA2300954911 /* Paris.gpx in Resources */,
 				5F9F375B20B56F4D00FC872A /* Assets.xcassets in Resources */,
 				5F9F375620B56F4C00FC872A /* Main.storyboard in Resources */,
 			);
@@ -393,6 +408,7 @@
 				5F9F375120B56F4B00FC872A /* AppDelegate.swift in Sources */,
 				5F9F377E20B571A000FC872A /* ToiletViewModel.swift in Sources */,
 				5F9F375920B56F4C00FC872A /* pipi.xcdatamodeld in Sources */,
+				5F0AC68C20B6EE9000954911 /* UserLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
