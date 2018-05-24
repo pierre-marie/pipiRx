@@ -37,29 +37,29 @@ class ToiletViewController: UIViewController, MKMapViewDelegate {
         map.addAnnotations(self.viewModel.fetchToiletAnnotations())
     }
 
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-
-        guard !(annotation is MKUserLocation) else {
-            return nil
-        }
-        
-        let annotationIdentifier = "AnnotationIdentifier"
-        var annotationView: MKAnnotationView?
-        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
-            annotationView = dequeuedAnnotationView
-            annotationView?.annotation = annotation
-        } else {
-            let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            annotationView = av
-        }
-        
-        if let annotationView = annotationView {
-            annotationView.canShowCallout = true
-            annotationView.image = UIImage(named: "t411")
-        }
-        
-        return annotationView
-    }
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//
+//        guard !(annotation is MKUserLocation) else {
+//            return nil
+//        }
+//
+//        let annotationIdentifier = "AnnotationIdentifier"
+//        var annotationView: MKAnnotationView?
+//        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+//            annotationView = dequeuedAnnotationView
+//            annotationView?.annotation = annotation
+//        } else {
+//            let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+//            annotationView = av
+//        }
+//
+//        if let annotationView = annotationView {
+//            annotationView.canShowCallout = true
+//            annotationView.image = UIImage(named: "t411")
+//        }
+//
+//        return annotationView
+//    }
     
     func centerMapOn(location: CLLocation) {
 
@@ -74,6 +74,10 @@ class ToiletViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
 
         UserLocationManager.shared.determineCurrentLocation()
+        
+        map.register(ToiletView.self, forAnnotationViewWithReuseIdentifier:
+            MKMapViewDefaultAnnotationViewReuseIdentifier)
+        map.register(ToiletsClusterView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
         
         self.viewModel.toilets
             .subscribe(onNext: { [weak self] toilets in
