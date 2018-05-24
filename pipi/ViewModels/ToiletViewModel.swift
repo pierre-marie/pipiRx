@@ -29,7 +29,20 @@ struct ToiletViewModel {
         return toiletAnnotations
     }
     
+    func switchValueChanged(switchIsOn: Bool) {
+        
+        if (!switchIsOn) {
+            fetchToilets()
+        } else {
+            let dataArray = self.toiletsVariable.value as! Array<Toilet>
+            self.toiletsVariable.value = dataArray.filter {
+                $0.opening_time.contains("24 h / 24")
+            }
+        }
+    }
+    
     func fetchToilets() {
+        
         
         ToiletService.shared.getToiletsFromApi(success: { (response) -> Void in
             self.toiletsVariable.value = response!

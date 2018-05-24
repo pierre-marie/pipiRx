@@ -36,6 +36,6 @@ class ToiletAnnotation: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        return locationName
+        return ""
     }
 }
