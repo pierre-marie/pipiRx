@@ -43,7 +43,6 @@ struct ToiletViewModel {
     
     func fetchToilets() {
         
-        
         ToiletService.shared.getToiletsFromApi(success: { (response) -> Void in
             self.toiletsVariable.value = response!
         }) { (error) -> Void in

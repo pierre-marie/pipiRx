@@ -8,9 +8,11 @@
 
 import UIKit
 import Alamofire
+import Unbox
+import RealmSwift
 
 class ToiletService: NSObject {
-
+    
     static let shared = ToiletService()
     
     //MARK: Get toilets from API
@@ -24,28 +26,23 @@ class ToiletService: NSObject {
             case .success:
                 
                 if let result = response.result.value {
+                    
                     let JSON = result as! NSDictionary
                     let records = JSON.object(forKey:"records") as! NSArray
-
-                    var toilets = Array<Toilet>()
+                    let realm = try! Realm()
                     
                     for record in records {
                         let r = record as! NSDictionary
-                        let fields = r.object(forKey: "fields") as! NSDictionary
-                        let geom = fields.object(forKey: "geom") as! NSDictionary
-                        let coordinates = geom.object(forKey: "coordinates") as! NSArray
-                        
-                        let t = Toilet(record_id: r.value(forKey: "recordid") as! String,
-                                       record_timestamp: r.value(forKey: "record_timestamp") as! String,
-                                       latitude: coordinates[1] as! Double,
-                                       longitude: coordinates[0] as! Double,
-                                       opening_time: fields.value(forKey: "horaires_ouverture") as! String,
-                                       district: fields.value(forKey: "arrondissement") as! String,
-                                       street_name: fields.value(forKey: "nom_voie") as! String,
-                                       street_number: "")//fields.value(forKey: "numero_voie") as! String)
-                        toilets.append(t)
+                        do {
+                            let t = try unbox(dictionary: r as! UnboxableDictionary) as Toilet
+                            try! realm.write() {
+                                realm.add(t, update: true)
+                            }
+                        } catch {
+                            // ...
+                        }
                     }
-                    
+                    let toilets = Toilet().getAll()
                     success(toilets)
                 }
                 

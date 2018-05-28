@@ -11,13 +11,13 @@
 		5F0AC68C20B6EE9000954911 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AC68B20B6EE9000954911 /* UserLocationManager.swift */; };
 		5F0AC68E20B6FDD600954911 /* ToiletsClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AC68D20B6FDD600954911 /* ToiletsClusterView.swift */; };
 		5F0AC69020B6FFD600954911 /* ToiletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AC68F20B6FFD600954911 /* ToiletView.swift */; };
+		5F6EC74320B8114500C690F4 /* Toilet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6EC74120B8114500C690F4 /* Toilet.swift */; };
+		5F6EC77720B84D3600C690F4 /* ToiletAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6EC77620B84D3600C690F4 /* ToiletAnnotation.swift */; };
 		5F9F375120B56F4B00FC872A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F375020B56F4B00FC872A /* AppDelegate.swift */; };
 		5F9F375620B56F4C00FC872A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9F375420B56F4B00FC872A /* Main.storyboard */; };
-		5F9F375920B56F4C00FC872A /* pipi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F375720B56F4C00FC872A /* pipi.xcdatamodeld */; };
 		5F9F375B20B56F4D00FC872A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F9F375A20B56F4D00FC872A /* Assets.xcassets */; };
 		5F9F375E20B56F4D00FC872A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9F375C20B56F4D00FC872A /* LaunchScreen.storyboard */; };
 		5F9F376920B56F4D00FC872A /* pipiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F376820B56F4D00FC872A /* pipiTests.swift */; };
-		5F9F377720B56FAB00FC872A /* Toilet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F377620B56FAB00FC872A /* Toilet.swift */; };
 		5F9F377920B5711700FC872A /* ToiletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F377820B5711700FC872A /* ToiletViewController.swift */; };
 		5F9F377C20B5715F00FC872A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9F377B20B5715F00FC872A /* MapKit.framework */; };
 		5F9F377E20B571A000FC872A /* ToiletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F377D20B571A000FC872A /* ToiletViewModel.swift */; };
@@ -43,17 +43,17 @@
 		5F0AC68B20B6EE9000954911 /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		5F0AC68D20B6FDD600954911 /* ToiletsClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletsClusterView.swift; sourceTree = "<group>"; };
 		5F0AC68F20B6FFD600954911 /* ToiletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletView.swift; sourceTree = "<group>"; };
+		5F6EC74120B8114500C690F4 /* Toilet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toilet.swift; sourceTree = "<group>"; };
+		5F6EC77620B84D3600C690F4 /* ToiletAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletAnnotation.swift; sourceTree = "<group>"; };
 		5F9F374D20B56F4B00FC872A /* pipi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pipi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9F375020B56F4B00FC872A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F9F375520B56F4B00FC872A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5F9F375820B56F4C00FC872A /* pipi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pipi.xcdatamodel; sourceTree = "<group>"; };
 		5F9F375A20B56F4D00FC872A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F9F375D20B56F4D00FC872A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F9F375F20B56F4D00FC872A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F9F376420B56F4D00FC872A /* pipiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pipiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9F376820B56F4D00FC872A /* pipiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pipiTests.swift; sourceTree = "<group>"; };
 		5F9F376A20B56F4D00FC872A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F9F377620B56FAB00FC872A /* Toilet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toilet.swift; sourceTree = "<group>"; };
 		5F9F377820B5711700FC872A /* ToiletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletViewController.swift; sourceTree = "<group>"; };
 		5F9F377B20B5715F00FC872A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5F9F377D20B571A000FC872A /* ToiletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletViewModel.swift; sourceTree = "<group>"; };
@@ -127,7 +127,6 @@
 				5F9F375A20B56F4D00FC872A /* Assets.xcassets */,
 				5F9F375C20B56F4D00FC872A /* LaunchScreen.storyboard */,
 				5F9F375F20B56F4D00FC872A /* Info.plist */,
-				5F9F375720B56F4C00FC872A /* pipi.xcdatamodeld */,
 			);
 			path = pipi;
 			sourceTree = "<group>";
@@ -144,7 +143,8 @@
 		5F9F377320B56F5D00FC872A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5F9F377620B56FAB00FC872A /* Toilet.swift */,
+				5F6EC74120B8114500C690F4 /* Toilet.swift */,
+				5F6EC77620B84D3600C690F4 /* ToiletAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,7 +208,6 @@
 				5F9F374A20B56F4B00FC872A /* Frameworks */,
 				5F9F374B20B56F4B00FC872A /* Resources */,
 				B1091AB064B6E8D4FC119B66 /* [CP] Embed Pods Frameworks */,
-				DB66EA6BC8C1AB8698388317 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,8 +226,6 @@
 				5F9F376020B56F4D00FC872A /* Sources */,
 				5F9F376120B56F4D00FC872A /* Frameworks */,
 				5F9F376220B56F4D00FC872A /* Resources */,
-				C4445209C8AED6FB2576E7C7 /* [CP] Embed Pods Frameworks */,
-				D286A6ED990C90585742B72E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,61 +341,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pipi/Pods-pipi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pipi/Pods-pipi-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4445209C8AED6FB2576E7C7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pipiTests/Pods-pipiTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D286A6ED990C90585742B72E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pipiTests/Pods-pipiTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB66EA6BC8C1AB8698388317 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pipi/Pods-pipi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -408,13 +366,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F9F377720B56FAB00FC872A /* Toilet.swift in Sources */,
 				5F9F377920B5711700FC872A /* ToiletViewController.swift in Sources */,
 				5F9F378120B5894600FC872A /* ToiletService.swift in Sources */,
 				5F9F375120B56F4B00FC872A /* AppDelegate.swift in Sources */,
+				5F6EC77720B84D3600C690F4 /* ToiletAnnotation.swift in Sources */,
 				5F0AC68E20B6FDD600954911 /* ToiletsClusterView.swift in Sources */,
 				5F9F377E20B571A000FC872A /* ToiletViewModel.swift in Sources */,
-				5F9F375920B56F4C00FC872A /* pipi.xcdatamodeld in Sources */,
+				5F6EC74320B8114500C690F4 /* Toilet.swift in Sources */,
 				5F0AC68C20B6EE9000954911 /* UserLocationManager.swift in Sources */,
 				5F0AC69020B6FFD600954911 /* ToiletView.swift in Sources */,
 			);
@@ -685,19 +643,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		5F9F375720B56F4C00FC872A /* pipi.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5F9F375820B56F4C00FC872A /* pipi.xcdatamodel */,
-			);
-			currentVersion = 5F9F375820B56F4C00FC872A /* pipi.xcdatamodel */;
-			path = pipi.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 5F9F374520B56F4B00FC872A /* Project object */;
 }

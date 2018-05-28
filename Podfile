@@ -8,7 +8,9 @@ target 'pipi' do
   # Pods for pipi
   pod 'Alamofire', '~> 4.7'
   pod 'RxSwift', '~> 4.1'
-
+  pod 'Unbox', '~> 3.0'
+  pod 'RealmSwift'
+  
   target 'pipiTests' do
     inherit! :search_paths
     # Pods for testing

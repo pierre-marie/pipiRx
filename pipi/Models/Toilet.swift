@@ -1,41 +1,62 @@
 //
-//  Toilet.swift
+//  Toilet+CoreDataClass.swift
 //  pipi
 //
-//  Created by pierre-marie de jaureguiberry on 5/23/18.
+//  Created by pierre-marie de jaureguiberry on 5/25/18.
 //  Copyright © 2018 vo2. All rights reserved.
+//
 //
 
 import Foundation
-import MapKit
+import Realm
+import RealmSwift
+import Unbox
 
-struct Toilet {
+public class Toilet: Object, Unboxable {
     
-    var record_id: String
-    var record_timestamp: String
-    var latitude: Double
-    var longitude: Double
-    var opening_time: String
-    var district: String
-    var street_name: String
-    var street_number: String
-}
-
-class ToiletAnnotation: NSObject, MKAnnotation {
+    @objc dynamic var record_id = ""
+    @objc dynamic var record_timestamp = ""
+    @objc dynamic var latitude = 0.0
+    @objc dynamic var longitude = 0.0
+    @objc dynamic var opening_time = ""
+    @objc dynamic var district = ""
+    @objc dynamic var street_name = ""
+    @objc dynamic var street_number = ""
     
-    let title: String?
-    let locationName: String
-    let coordinate: CLLocationCoordinate2D
+    public required init(unboxer: Unboxer) throws {
+        
+        super.init()
+        
+        self.record_id = try unboxer.unbox(key: "recordid")
+        self.record_timestamp = try unboxer.unbox(key: "record_timestamp")
+        self.latitude = try unboxer.unbox(keyPath: "fields.geom_x_y.0")
+        self.longitude = try unboxer.unbox(keyPath: "fields.geom_x_y.1")
+        self.opening_time = try unboxer.unbox(keyPath: "fields.horaires_ouverture")
+        self.district = try unboxer.unbox(keyPath: "fields.arrondissement")
+        self.street_name = try unboxer.unbox(keyPath: "fields.nom_voie")
+//        self.street_number = try unboxer.unbox(keyPath: "fields.numero_voie")
+    }
     
-    init(title: String, locationName: String, coordinate: CLLocationCoordinate2D) {
-
-        self.title = title
-        self.locationName = locationName
-        self.coordinate = coordinate
+    required public init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
+    }
+    
+    required public init() {
         super.init()
     }
     
-    var subtitle: String? {
-        return ""
+    required public init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
+    }
+    
+    override public static func primaryKey() -> String? {
+        return "record_id"
+    }
+    
+    func getAll() -> [Toilet] {
+        
+        let realm = try! Realm()
+        let toilets = realm.objects(Toilet.self)
+        return Array(toilets)
     }
 }
